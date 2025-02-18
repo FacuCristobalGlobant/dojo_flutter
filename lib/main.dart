@@ -3,11 +3,11 @@ import 'package:dojo_flutter/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const TmdbApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class TmdbApp extends StatelessWidget {
+  const TmdbApp({super.key});
 
   @override
   Widget build(BuildContext context) {
