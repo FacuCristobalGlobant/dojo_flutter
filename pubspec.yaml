@@ -1,3 +1,5 @@
+# ignore_for_file: asset_does_not_exist
+
 name: dojo_flutter
 description: "A flutter exercise for dojo"
 # The following line prevents the package from being accidentally published to
