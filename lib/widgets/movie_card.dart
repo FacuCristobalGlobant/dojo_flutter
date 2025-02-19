@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dojo_flutter/constants/constants.dart';
@@ -43,26 +44,32 @@ class MovieCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Image.network(
-                  '${ApiConstants.baseImageW500}${movie.posterPath}',
+                SizedBox(
                   height: Measures.cardImageHeight,
                   width: Measures.cardImageWidth,
-                  loadingBuilder: (BuildContext context, Widget child,
-                      ImageChunkEvent? loadingProgress) {
-                    if (loadingProgress == null) return child;
-                    return SizedBox(
+                  child: CachedNetworkImage(
+                    errorWidget: (context, url, error) => SizedBox(
+                      height: Measures.cardImageHeight,
+                      width: Measures.cardImageWidth,
+                      child: Center(
+                        child: Icon(
+                          Icons.error_outline,
+                          size: Measures.xxLarge,
+                        ),
+                      ),
+                    ),
+                    imageUrl: '${ApiConstants.baseImageW500}${movie.posterPath}',
+                    progressIndicatorBuilder: (context, url, downloadProgress) =>
+                        SizedBox(
                       height: Measures.cardImageHeight,
                       width: Measures.cardImageWidth,
                       child: Center(
                         child: CircularProgressIndicator(
-                          value: loadingProgress.expectedTotalBytes != null
-                              ? loadingProgress.cumulativeBytesLoaded /
-                                  loadingProgress.expectedTotalBytes!
-                              : null,
+                          value: downloadProgress.progress,
                         ),
                       ),
-                    );
-                  },
+                    ),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(

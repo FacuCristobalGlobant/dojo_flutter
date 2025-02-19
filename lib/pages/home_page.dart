@@ -1,4 +1,5 @@
 import 'package:dojo_flutter/utils/api_utils.dart';
+import 'package:dojo_flutter/utils/database_utils.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dojo_flutter/constants/constants.dart';
@@ -19,6 +20,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    super.initState();
+
+    final dbUtils = DatabaseUtils();
+    dbUtils.createDatabase();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -26,6 +35,9 @@ class _HomePageState extends State<HomePage> {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: Measures.large,
+            ),
             Image.asset(
               AssetConstants.logoImage,
               height: Measures.xLarge,
@@ -46,11 +58,10 @@ class _HomePageState extends State<HomePage> {
         future: callApi(),
         builder: (
           BuildContext context,
-          AsyncSnapshot<Map<String, dynamic>> snapshot,
+          AsyncSnapshot<List<Movie>> snapshot,
         ) {
           if (snapshot.hasData) {
-            final response =
-                TmdbResponse.fromJson(snapshot.data as Map<String, dynamic>);
+            final response = snapshot.data;
 
             return SingleChildScrollView(
               child: Column(
@@ -74,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                     height: Measures.cardHeight,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
-                      children: buildMoviesList(response.results!),
+                      children: buildMoviesList(response!),
                     ),
                   ),
                 ],
