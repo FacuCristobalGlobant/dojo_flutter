@@ -1,3 +1,1 @@
-abstract class IRepository {
-
-}
+abstract class IRepository {}

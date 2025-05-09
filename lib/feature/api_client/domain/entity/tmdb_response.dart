@@ -5,7 +5,8 @@ class TmdbResponse {
     num? page,
     List<Movie>? results,
     num? totalPages,
-    num? totalResults,}){
+    num? totalResults,
+  }) {
     _page = page;
     _results = results;
     _totalPages = totalPages;
@@ -27,15 +28,18 @@ class TmdbResponse {
   List<Movie>? _results;
   num? _totalPages;
   num? _totalResults;
-  TmdbResponse copyWith({  num? page,
+  TmdbResponse copyWith({
+    num? page,
     List<Movie>? results,
     num? totalPages,
     num? totalResults,
-  }) => TmdbResponse(  page: page ?? _page,
-    results: results ?? _results,
-    totalPages: totalPages ?? _totalPages,
-    totalResults: totalResults ?? _totalResults,
-  );
+  }) =>
+      TmdbResponse(
+        page: page ?? _page,
+        results: results ?? _results,
+        totalPages: totalPages ?? _totalPages,
+        totalResults: totalResults ?? _totalResults,
+      );
   num? get page => _page;
   List<Movie> get results => _results ?? <Movie>[];
   num? get totalPages => _totalPages;
@@ -51,5 +55,4 @@ class TmdbResponse {
     map['total_results'] = _totalResults;
     return map;
   }
-
 }

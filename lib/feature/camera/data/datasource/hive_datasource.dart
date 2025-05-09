@@ -2,8 +2,7 @@ import 'package:dojo_flutter/feature/camera/data/datasource/photo_datasource.dar
 import 'package:dojo_flutter/feature/camera/domain/entity/photo.dart';
 import 'package:hive_ce/hive.dart';
 
-class HiveDatasource extends PhotoDatasource{
-
+class HiveDatasource extends PhotoDatasource {
   HiveDatasource(this.box);
 
   final Box<Photo> box;

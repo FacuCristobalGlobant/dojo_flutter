@@ -31,13 +31,13 @@ import 'package:mockito/mockito.dart' as _i1;
 
 class _FakeDataSource_0 extends _i1.SmartFake implements _i2.DataSource {
   _FakeDataSource_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+      : super(parent, parentInvocation);
 }
 
 class _FakeDatabaseDataSource_1 extends _i1.SmartFake
     implements _i3.DatabaseDataSource {
   _FakeDatabaseDataSource_1(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+      : super(parent, parentInvocation);
 }
 
 /// A class which mocks [ApiMovieRepository].
@@ -46,43 +46,37 @@ class _FakeDatabaseDataSource_1 extends _i1.SmartFake
 class MockApiMovieRepository extends _i1.Mock
     implements _i4.ApiMovieRepository {
   @override
-  _i2.DataSource get mainDataSource =>
-      (super.noSuchMethod(
-            Invocation.getter(#mainDataSource),
-            returnValue: _FakeDataSource_0(
-              this,
-              Invocation.getter(#mainDataSource),
-            ),
-            returnValueForMissingStub: _FakeDataSource_0(
-              this,
-              Invocation.getter(#mainDataSource),
-            ),
-          )
-          as _i2.DataSource);
+  _i2.DataSource get mainDataSource => (super.noSuchMethod(
+        Invocation.getter(#mainDataSource),
+        returnValue: _FakeDataSource_0(
+          this,
+          Invocation.getter(#mainDataSource),
+        ),
+        returnValueForMissingStub: _FakeDataSource_0(
+          this,
+          Invocation.getter(#mainDataSource),
+        ),
+      ) as _i2.DataSource);
 
   @override
-  _i3.DatabaseDataSource get localDatabase =>
-      (super.noSuchMethod(
-            Invocation.getter(#localDatabase),
-            returnValue: _FakeDatabaseDataSource_1(
-              this,
-              Invocation.getter(#localDatabase),
-            ),
-            returnValueForMissingStub: _FakeDatabaseDataSource_1(
-              this,
-              Invocation.getter(#localDatabase),
-            ),
-          )
-          as _i3.DatabaseDataSource);
+  _i3.DatabaseDataSource get localDatabase => (super.noSuchMethod(
+        Invocation.getter(#localDatabase),
+        returnValue: _FakeDatabaseDataSource_1(
+          this,
+          Invocation.getter(#localDatabase),
+        ),
+        returnValueForMissingStub: _FakeDatabaseDataSource_1(
+          this,
+          Invocation.getter(#localDatabase),
+        ),
+      ) as _i3.DatabaseDataSource);
 
   @override
-  _i5.Future<List<_i6.Movie>> getPopularMovies() =>
-      (super.noSuchMethod(
-            Invocation.method(#getPopularMovies, []),
-            returnValue: _i5.Future<List<_i6.Movie>>.value(<_i6.Movie>[]),
-            returnValueForMissingStub: _i5.Future<List<_i6.Movie>>.value(
-              <_i6.Movie>[],
-            ),
-          )
-          as _i5.Future<List<_i6.Movie>>);
+  _i5.Future<List<_i6.Movie>> getPopularMovies() => (super.noSuchMethod(
+        Invocation.method(#getPopularMovies, []),
+        returnValue: _i5.Future<List<_i6.Movie>>.value(<_i6.Movie>[]),
+        returnValueForMissingStub: _i5.Future<List<_i6.Movie>>.value(
+          <_i6.Movie>[],
+        ),
+      ) as _i5.Future<List<_i6.Movie>>);
 }

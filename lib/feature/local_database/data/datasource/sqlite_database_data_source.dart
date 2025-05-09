@@ -5,7 +5,6 @@ import 'package:sqflite/sqflite.dart';
 import 'database_data_source.dart';
 
 class SqlDatabaseDataSource implements DatabaseDataSource {
-
   static const _numberOfResults = 20;
 
   late final Database db;
@@ -51,18 +50,17 @@ class SqlDatabaseDataSource implements DatabaseDataSource {
   Future<Map<String, dynamic>> getPopularMovies() async {
     List<Map<String, dynamic>> result = [];
     if (db.isOpen) {
-      final List<Map<String, Object?>> moviesMap = await db.query(
-          'movies', orderBy: 'popularity desc');
+      final List<Map<String, Object?>> moviesMap =
+          await db.query('movies', orderBy: 'popularity desc');
 
       for (final movieMap in moviesMap) {
         final List<Map<String, Object?>> genreMovieMap = await db.rawQuery(
             'SELECT genreId FROM moviesGenre WHERE movieId = ${movieMap['id']} LIMIT $_numberOfResults');
         final genres = genreMovieMap.map((rawGenre) => rawGenre['genreId']).map(
-              (element) =>
-              int.parse(
+              (element) => int.parse(
                 element.toString(),
               ),
-        );
+            );
 
         result.add(
           {
@@ -116,10 +114,10 @@ class SqlDatabaseDataSource implements DatabaseDataSource {
             ')');
         db.execute(
           'CREATE TABLE moviesGenre('
-              'movieId INTEGER, '
-              'genreId INTEGER, '
-              'PRIMARY KEY (movieId, genreId)'
-              ')',
+          'movieId INTEGER, '
+          'genreId INTEGER, '
+          'PRIMARY KEY (movieId, genreId)'
+          ')',
         );
       },
       version: 1,

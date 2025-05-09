@@ -113,4 +113,3 @@ class ErrorAuthenticateState extends AuthenticationState {
 class SuccessfulRegistrationState extends AuthenticationState {}
 
 class SuccessfulLoginState extends AuthenticationState {}
-

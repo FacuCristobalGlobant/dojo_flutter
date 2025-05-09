@@ -1,5 +1,4 @@
 class Measures {
-
   static const xSmall = 4.0;
   static const small = 8.0;
   static const medium = 12.0;

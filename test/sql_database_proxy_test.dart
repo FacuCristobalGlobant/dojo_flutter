@@ -45,13 +45,14 @@ void main() {
 
   test(
     'Insert a movie',
-        () async {
+    () async {
       final mockedDatabaseDatasource = MockSqlDatabaseDataSource();
       final databaseProxy = SqlDatabaseProxy();
       databaseProxy.dataSource = mockedDatabaseDatasource;
 
-      when(mockedDatabaseDatasource.insertMovies([MovieMock.mockedMovie])).thenAnswer(
-            (_) async => 1,
+      when(mockedDatabaseDatasource.insertMovies([MovieMock.mockedMovie]))
+          .thenAnswer(
+        (_) async => 1,
       );
 
       await databaseProxy.insertMovies([MovieMock.mockedMovie]);

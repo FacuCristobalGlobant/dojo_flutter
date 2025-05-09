@@ -6,7 +6,7 @@ import 'package:dojo_flutter/feature/api_client/domain/entity/tmdb_response.dart
 import 'package:dojo_flutter/feature/api_client/domain/repository/i_movies_repository.dart';
 import 'package:dojo_flutter/feature/api_client/data/datasource/data_source.dart';
 
-class ApiMovieRepository implements IMoviesRepository{
+class ApiMovieRepository implements IMoviesRepository {
   ApiMovieRepository({
     required this.mainDataSource,
     required this.localDatabase,
@@ -24,7 +24,6 @@ class ApiMovieRepository implements IMoviesRepository{
 
       result.addAll(tmdbResponse.results);
       await localDatabase.insertMovies(tmdbResponse.results);
-
     } catch (e) {
       if (kDebugMode) {
         print(e.toString());

@@ -87,7 +87,7 @@ void main() {
       build: () => movieBloc,
       setUp: () {
         when(getMoviesUseCaseMock.call()).thenAnswer(
-              (_) async => <Movie>[
+          (_) async => <Movie>[
             MovieMock.mockedMovie,
           ],
         );

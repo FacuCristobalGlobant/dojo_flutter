@@ -12,7 +12,6 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
         ) {
     on<GetPopularMoviesCalled>(
       (event, emit) async {
-
         emit(LoadingMovieState());
 
         try {

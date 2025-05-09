@@ -2,8 +2,7 @@ import 'package:dojo_flutter/feature/camera/data/datasource/photo_datasource.dar
 import 'package:dojo_flutter/feature/camera/domain/entity/photo.dart';
 import 'package:dojo_flutter/feature/camera/domain/repository/i_photo_repository.dart';
 
-class PhotoRepository implements IPhotoRepository{
-
+class PhotoRepository implements IPhotoRepository {
   PhotoRepository(this.photoDatasource);
 
   final PhotoDatasource photoDatasource;

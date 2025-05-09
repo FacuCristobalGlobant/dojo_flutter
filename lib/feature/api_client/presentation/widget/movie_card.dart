@@ -58,17 +58,18 @@ class MovieCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    imageUrl: '${ApiConstants.baseImageW500}${movie.posterPath}',
-                    progressIndicatorBuilder: (context, url, downloadProgress) =>
-                        SizedBox(
-                          height: Measures.cardImageHeight,
-                          width: Measures.cardImageWidth,
-                          child: Center(
-                            child: CircularProgressIndicator(
-                              value: downloadProgress.progress,
-                            ),
-                          ),
+                    imageUrl:
+                        '${ApiConstants.baseImageW500}${movie.posterPath}',
+                    progressIndicatorBuilder:
+                        (context, url, downloadProgress) => SizedBox(
+                      height: Measures.cardImageHeight,
+                      width: Measures.cardImageWidth,
+                      child: Center(
+                        child: CircularProgressIndicator(
+                          value: downloadProgress.progress,
                         ),
+                      ),
+                    ),
                   ),
                 ),
                 Padding(

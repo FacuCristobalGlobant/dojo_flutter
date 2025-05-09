@@ -5,7 +5,6 @@ import 'dart:io';
 import 'package:dojo_flutter/core/tools/cli_flag.dart';
 
 void main(List<String> args) async {
-
   if (args.isEmpty) {
     print('''
 Usage: dart core/tools/create_feature.dart [options]
@@ -32,9 +31,12 @@ Options:
     exit(0);
   }
 
-  final dataRepository = await Directory('$featuresRoot/$name/data/repository').create(recursive: true);
-  final datasourceRepository = await Directory('$featuresRoot/$name/data/datasource').create();
-  final modelRepository = await Directory('$featuresRoot/$name/data/model').create();
+  final dataRepository = await Directory('$featuresRoot/$name/data/repository')
+      .create(recursive: true);
+  final datasourceRepository =
+      await Directory('$featuresRoot/$name/data/datasource').create();
+  final modelRepository =
+      await Directory('$featuresRoot/$name/data/model').create();
 
   print('creating data layer...');
   print(dataRepository.path);
@@ -42,9 +44,12 @@ Options:
   print(modelRepository.path);
   print('');
 
-  final entityDomain = await Directory('$featuresRoot/$name/domain/entity').create(recursive: true);
-  final repositoryDomain = await Directory('$featuresRoot/$name/domain/repository').create();
-  final usecaseDomain = await Directory('$featuresRoot/$name/domain/usecase').create();
+  final entityDomain = await Directory('$featuresRoot/$name/domain/entity')
+      .create(recursive: true);
+  final repositoryDomain =
+      await Directory('$featuresRoot/$name/domain/repository').create();
+  final usecaseDomain =
+      await Directory('$featuresRoot/$name/domain/usecase').create();
 
   print('creating domain layer...');
   print(entityDomain.path);
@@ -52,9 +57,12 @@ Options:
   print(usecaseDomain.path);
   print('');
 
-  final widget = await Directory('$featuresRoot/$name/presentation/widget').create(recursive: true);
-  final controller = await Directory('$featuresRoot/$name/presentation/controller').create();
-  final view = await Directory('$featuresRoot/$name/presentation/view').create();
+  final widget = await Directory('$featuresRoot/$name/presentation/widget')
+      .create(recursive: true);
+  final controller =
+      await Directory('$featuresRoot/$name/presentation/controller').create();
+  final view =
+      await Directory('$featuresRoot/$name/presentation/view').create();
 
   print('creating presentation layer...');
   print(widget.path);

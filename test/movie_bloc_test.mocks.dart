@@ -30,7 +30,7 @@ import 'package:mockito/mockito.dart' as _i1;
 class _FakeIMoviesRepository_0 extends _i1.SmartFake
     implements _i2.IMoviesRepository {
   _FakeIMoviesRepository_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+      : super(parent, parentInvocation);
 }
 
 /// A class which mocks [GetMoviesUseCase].
@@ -38,28 +38,25 @@ class _FakeIMoviesRepository_0 extends _i1.SmartFake
 /// See the documentation for Mockito's code generation for more information.
 class MockGetMoviesUseCase extends _i1.Mock implements _i3.GetMoviesUseCase {
   @override
-  _i2.IMoviesRepository get repository =>
-      (super.noSuchMethod(
-            Invocation.getter(#repository),
-            returnValue: _FakeIMoviesRepository_0(
-              this,
-              Invocation.getter(#repository),
-            ),
-            returnValueForMissingStub: _FakeIMoviesRepository_0(
-              this,
-              Invocation.getter(#repository),
-            ),
-          )
-          as _i2.IMoviesRepository);
+  _i2.IMoviesRepository get repository => (super.noSuchMethod(
+        Invocation.getter(#repository),
+        returnValue: _FakeIMoviesRepository_0(
+          this,
+          Invocation.getter(#repository),
+        ),
+        returnValueForMissingStub: _FakeIMoviesRepository_0(
+          this,
+          Invocation.getter(#repository),
+        ),
+      ) as _i2.IMoviesRepository);
 
   @override
   _i4.Future<List<_i5.Movie>> call({Map<String, dynamic>? args}) =>
       (super.noSuchMethod(
-            Invocation.method(#call, [], {#args: args}),
-            returnValue: _i4.Future<List<_i5.Movie>>.value(<_i5.Movie>[]),
-            returnValueForMissingStub: _i4.Future<List<_i5.Movie>>.value(
-              <_i5.Movie>[],
-            ),
-          )
-          as _i4.Future<List<_i5.Movie>>);
+        Invocation.method(#call, [], {#args: args}),
+        returnValue: _i4.Future<List<_i5.Movie>>.value(<_i5.Movie>[]),
+        returnValueForMissingStub: _i4.Future<List<_i5.Movie>>.value(
+          <_i5.Movie>[],
+        ),
+      ) as _i4.Future<List<_i5.Movie>>);
 }

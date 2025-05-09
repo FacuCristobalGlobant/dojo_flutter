@@ -112,7 +112,7 @@ class _CameraViewState extends State<CameraView>
                         color: Colors.black,
                         border: Border.all(
                           color: controller != null &&
-                              controller!.value.isRecordingVideo
+                                  controller!.value.isRecordingVideo
                               ? Colors.redAccent
                               : Colors.grey,
                           width: 3.0,
@@ -173,14 +173,14 @@ class _CameraViewState extends State<CameraView>
           controller!,
           child: LayoutBuilder(
               builder: (BuildContext context, BoxConstraints constraints) {
-                return GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onScaleStart: _handleScaleStart,
-                  onScaleUpdate: _handleScaleUpdate,
-                  onTapDown: (TapDownDetails details) =>
-                      onViewFinderTap(details, constraints),
-                );
-              }),
+            return GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onScaleStart: _handleScaleStart,
+              onScaleUpdate: _handleScaleUpdate,
+              onTapDown: (TapDownDetails details) =>
+                  onViewFinderTap(details, constraints),
+            );
+          }),
         ),
       );
     }
@@ -217,15 +217,15 @@ class _CameraViewState extends State<CameraView>
                 width: 64.0,
                 height: 64.0,
                 child:
-                // The captured image on the web contains a network-accessible URL
-                // pointing to a location within the browser. It may be displayed
-                // either with Image.network or Image.memory after loading the image
-                // bytes to memory.
-                kIsWeb
-                    ? Image.network(imageFile!.path)
-                    : Image.file(
-                  File(imageFile!.path),
-                ),
+                    // The captured image on the web contains a network-accessible URL
+                    // pointing to a location within the browser. It may be displayed
+                    // either with Image.network or Image.memory after loading the image
+                    // bytes to memory.
+                    kIsWeb
+                        ? Image.network(imageFile!.path)
+                        : Image.file(
+                            File(imageFile!.path),
+                          ),
               ),
           ],
         ),
@@ -266,8 +266,8 @@ class _CameraViewState extends State<CameraView>
           icon: const Icon(Icons.camera_alt),
           color: Colors.blue,
           onPressed: cameraController != null &&
-              cameraController.value.isInitialized &&
-              !cameraController.value.isRecordingVideo
+                  cameraController.value.isInitialized &&
+                  !cameraController.value.isRecordingVideo
               ? onTakePictureButtonPressed
               : null,
         ),
@@ -311,11 +311,7 @@ class _CameraViewState extends State<CameraView>
     return Row(children: toggles);
   }
 
-  String timestamp() =>
-      DateTime
-          .now()
-          .millisecondsSinceEpoch
-          .toString();
+  String timestamp() => DateTime.now().millisecondsSinceEpoch.toString();
 
   void showInSnackBar(String message) {
     ScaffoldMessenger.of(context)
@@ -383,18 +379,18 @@ class _CameraViewState extends State<CameraView>
         case 'CameraAccessDenied':
           showInSnackBar('You have denied camera access.');
         case 'CameraAccessDeniedWithoutPrompt':
-        // iOS only
+          // iOS only
           showInSnackBar('Please go to Settings app to enable camera access.');
         case 'CameraAccessRestricted':
-        // iOS only
+          // iOS only
           showInSnackBar('Camera access is restricted.');
         case 'AudioAccessDenied':
           showInSnackBar('You have denied audio access.');
         case 'AudioAccessDeniedWithoutPrompt':
-        // iOS only
+          // iOS only
           showInSnackBar('Please go to Settings app to enable audio access.');
         case 'AudioAccessRestricted':
-        // iOS only
+          // iOS only
           showInSnackBar('Audio access is restricted.');
         default:
           _showCameraException(e);
@@ -408,10 +404,10 @@ class _CameraViewState extends State<CameraView>
 
   void onTakePictureButtonPressed() {
     takePicture().then(
-          (XFile? file) {
+      (XFile? file) {
         if (mounted) {
           setState(
-                () {
+            () {
               imageFile = file;
             },
           );
@@ -433,11 +429,7 @@ class _CameraViewState extends State<CameraView>
         } else {
           await cameraController.lockCaptureOrientation();
           showInSnackBar(
-              'Capture orientation locked to ${cameraController.value
-                  .lockedCaptureOrientation
-                  .toString()
-                  .split('.')
-                  .last}');
+              'Capture orientation locked to ${cameraController.value.lockedCaptureOrientation.toString().split('.').last}');
         }
       }
     } on CameraException catch (e) {

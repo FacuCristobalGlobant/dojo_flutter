@@ -13,7 +13,7 @@ import 'api_movie_repository_test.mocks.dart';
 void main() {
   test(
     'Get movies from api test, empty result',
-        () async {
+    () async {
       final mockSqlDatabaseDataSource = MockSqlDatabaseDataSource();
       final mockApiDataSource = MockApiDataSource();
 

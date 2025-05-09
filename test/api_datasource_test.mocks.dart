@@ -30,7 +30,7 @@ import 'package:sqflite/sqflite.dart' as _i2;
 
 class _FakeDatabase_0 extends _i1.SmartFake implements _i2.Database {
   _FakeDatabase_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+      : super(parent, parentInvocation);
 }
 
 /// A class which mocks [SqlDatabaseDataSource].
@@ -39,44 +39,38 @@ class _FakeDatabase_0 extends _i1.SmartFake implements _i2.Database {
 class MockSqlDatabaseDataSource extends _i1.Mock
     implements _i3.SqlDatabaseDataSource {
   @override
-  _i2.Database get db =>
-      (super.noSuchMethod(
-            Invocation.getter(#db),
-            returnValue: _FakeDatabase_0(this, Invocation.getter(#db)),
-            returnValueForMissingStub: _FakeDatabase_0(
-              this,
-              Invocation.getter(#db),
-            ),
-          )
-          as _i2.Database);
+  _i2.Database get db => (super.noSuchMethod(
+        Invocation.getter(#db),
+        returnValue: _FakeDatabase_0(this, Invocation.getter(#db)),
+        returnValueForMissingStub: _FakeDatabase_0(
+          this,
+          Invocation.getter(#db),
+        ),
+      ) as _i2.Database);
 
   @override
   set db(_i2.Database? _db) => super.noSuchMethod(
-    Invocation.setter(#db, _db),
-    returnValueForMissingStub: null,
-  );
+        Invocation.setter(#db, _db),
+        returnValueForMissingStub: null,
+      );
 
   @override
-  _i4.Future<void> insertMovies(List<_i5.Movie>? movies) =>
-      (super.noSuchMethod(
-            Invocation.method(#insertMovies, [movies]),
-            returnValue: _i4.Future<void>.value(),
-            returnValueForMissingStub: _i4.Future<void>.value(),
-          )
-          as _i4.Future<void>);
+  _i4.Future<void> insertMovies(List<_i5.Movie>? movies) => (super.noSuchMethod(
+        Invocation.method(#insertMovies, [movies]),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
-  _i4.Future<Map<String, dynamic>> getPopularMovies() =>
-      (super.noSuchMethod(
-            Invocation.method(#getPopularMovies, []),
-            returnValue: _i4.Future<Map<String, dynamic>>.value(
-              <String, dynamic>{},
-            ),
-            returnValueForMissingStub: _i4.Future<Map<String, dynamic>>.value(
-              <String, dynamic>{},
-            ),
-          )
-          as _i4.Future<Map<String, dynamic>>);
+  _i4.Future<Map<String, dynamic>> getPopularMovies() => (super.noSuchMethod(
+        Invocation.method(#getPopularMovies, []),
+        returnValue: _i4.Future<Map<String, dynamic>>.value(
+          <String, dynamic>{},
+        ),
+        returnValueForMissingStub: _i4.Future<Map<String, dynamic>>.value(
+          <String, dynamic>{},
+        ),
+      ) as _i4.Future<Map<String, dynamic>>);
 }
 
 /// A class which mocks [ApiDataSource].
@@ -84,15 +78,13 @@ class MockSqlDatabaseDataSource extends _i1.Mock
 /// See the documentation for Mockito's code generation for more information.
 class MockApiDataSource extends _i1.Mock implements _i6.ApiDataSource {
   @override
-  _i4.Future<Map<String, dynamic>> getPopularMovies() =>
-      (super.noSuchMethod(
-            Invocation.method(#getPopularMovies, []),
-            returnValue: _i4.Future<Map<String, dynamic>>.value(
-              <String, dynamic>{},
-            ),
-            returnValueForMissingStub: _i4.Future<Map<String, dynamic>>.value(
-              <String, dynamic>{},
-            ),
-          )
-          as _i4.Future<Map<String, dynamic>>);
+  _i4.Future<Map<String, dynamic>> getPopularMovies() => (super.noSuchMethod(
+        Invocation.method(#getPopularMovies, []),
+        returnValue: _i4.Future<Map<String, dynamic>>.value(
+          <String, dynamic>{},
+        ),
+        returnValueForMissingStub: _i4.Future<Map<String, dynamic>>.value(
+          <String, dynamic>{},
+        ),
+      ) as _i4.Future<Map<String, dynamic>>);
 }

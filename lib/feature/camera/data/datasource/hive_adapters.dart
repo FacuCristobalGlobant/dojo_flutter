@@ -6,5 +6,4 @@ part 'hive_adapters.g.dart';
 @GenerateAdapters([
   AdapterSpec<Photo>(),
 ])
-
 class HiveAdapters {}
