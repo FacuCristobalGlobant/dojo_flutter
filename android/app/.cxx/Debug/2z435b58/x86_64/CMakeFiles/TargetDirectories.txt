@@ -1,0 +1,2 @@
+/Users/facundo.cristobal/AndroidStudioProjects/dojo_flutter/android/app/.cxx/Debug/2z435b58/x86_64/CMakeFiles/edit_cache.dir
+/Users/facundo.cristobal/AndroidStudioProjects/dojo_flutter/android/app/.cxx/Debug/2z435b58/x86_64/CMakeFiles/rebuild_cache.dir
